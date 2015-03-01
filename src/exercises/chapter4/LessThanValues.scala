@@ -3,13 +3,14 @@ package exercises.chapter4
 
 object LessThanValues {
 
+
   def lteqgt(numbers: Array[Int], key: Int): Map[String, Int] = {
 
-    numbers.groupBy(value => value match {
+    numbers.groupBy {
       case x if x > key => "gt"
       case x if x < key => "lt"
       case _ => "eq"
-    }).map { case (k, v) => (k, v.length)}
+    }.map { case (k, v) => (k, v.length)}
   }
 
   def main(args: Array[String]) {
